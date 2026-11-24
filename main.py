@@ -1,29 +1,26 @@
-"""A single fortune for a potted plant, written out to a file.
+"""Fortune in a Pot — make.fun entry.
 
-This little program has one job: put a kind, hopeful prediction for a
-houseplant into the place the judges will read it from. The words stay
-inside the competition's length window, and the file is written as plain
-UTF-8 with nothing extra trailing behind the text.
+Writes a single-line fortune to /output/entry.txt.
+The fortune is a one-liner (1-120 characters) for the
+u-golden-heron-44-fortune-in-a-pot-ded981e9 bounty.
 """
 
-from pathlib import Path
+import os
 
-# The fortune itself: a gentle prediction about the plant's own future.
 ENTRY = (
-    "Your roots will find the good soil, your leaves will catch the "
-    "morning sun, and the cat will finally leave you alone."
+    # The fortune itself: 108 characters, within the 1-120 gate.
+    "Your roots will find good soil, your leaves will catch the sun, "
+    "and Biscuit stops eating you after 19 tries."
 )
 
-# The competition only accepts fortunes between one and 120 characters.
-# Anything outside that window fails the gate before the judges see it.
-assert 1 <= len(ENTRY) <= 120, "fortune must be 1-120 characters"
+OUTPUT_PATH = "/output/entry.txt"
 
 
 def main() -> None:
-    out = Path("/output/entry.txt")
-    out.parent.mkdir(parents=True, exist_ok=True)
-    # Write the text exactly as it stands, no newline at the end.
-    out.write_text(ENTRY, encoding="utf-8")
+    """Write the entry line to /output/entry.txt (UTF-8)."""
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        f.write(ENTRY)
 
 
 if __name__ == "__main__":

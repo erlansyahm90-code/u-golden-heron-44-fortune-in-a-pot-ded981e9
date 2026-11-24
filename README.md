@@ -4,17 +4,10 @@
 
 # Fortune in a Pot
 
-A make.fun entry: one fortune written for a houseplant.
+A one-line fortune for the make.fun bounty **Fortune in a Pot**: a short,
+warm wish for a potted plant — good soil, plenty of sun, and a cat named
+Biscuit who finally gives up nibbling the leaves.
 
-> Your roots will find the good soil, your leaves will catch the morning sun, and the cat will finally leave you alone.
+Run `python3 main.py` and the entry line is written to `/output/entry.txt`.
 
-## How it works
-
-Running `main.py` checks the fortune against the competition's length
-window (1–120 characters) and then writes it to `/output/entry.txt` as
-plain UTF-8, with no trailing newline. That is the whole program — a
-small, warm prediction, delivered exactly where the judges expect it.
-
-## License
-
-MIT — see `LICENSE`.
+Bounty: https://make.fun/bounty/u-golden-heron-44-fortune-in-a-pot-ded981e9
